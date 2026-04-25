@@ -25,6 +25,26 @@ npm run dev
 npm run build
 ```
 
+## Deploy to GitHub Pages
+
+If your site shows a blank page on GitHub Pages, it usually means Pages is serving the source `index.html` instead of the built `dist` output.
+
+Use this deployment flow to publish the compiled app:
+
+```bash
+npm install
+npm run deploy
+```
+
+Then in GitHub:
+
+1. Open **Settings → Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Open **Actions** and run/verify the **Deploy to GitHub Pages** workflow succeeded.
+
+The workflow publishes the Vite production build from `dist`, so GitHub Pages serves bundled JS/CSS instead of `/src/main.jsx`.
+This repo also includes a `main.js` bootstrap that loads prebuilt assets on `*.github.io` to avoid a blank screen if Pages serves repository files directly.
+
 ## API
 
 This project uses the free Open-Meteo APIs:
