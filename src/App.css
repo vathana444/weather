@@ -1,0 +1,184 @@
+.app-shell {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.weather-panel {
+  width: min(720px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+}
+
+.panel-header {
+  display: grid;
+  gap: 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.search-form {
+  display: grid;
+  gap: 10px;
+}
+
+.search-form label {
+  color: var(--text-h);
+  font-weight: 700;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-row input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  font: inherit;
+  padding: 12px 14px;
+}
+
+.search-row input:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.search-row button {
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0 18px;
+}
+
+.search-row button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.weather-card {
+  display: grid;
+  gap: 22px;
+  border-radius: 8px;
+  background: var(--weather-bg);
+  padding: 24px;
+}
+
+.weather-location {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.weather-condition,
+.updated {
+  margin: 0;
+}
+
+.temperature-row {
+  display: flex;
+  align-items: flex-start;
+  color: var(--text-h);
+}
+
+.temperature {
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.degree {
+  margin-top: 9px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 14px;
+}
+
+.stat span {
+  font-size: 14px;
+}
+
+.stat strong {
+  color: var(--text-h);
+}
+
+.status-message,
+.empty-state {
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.status-message.loading,
+.empty-state {
+  background: var(--info-bg);
+  color: var(--text-h);
+}
+
+.status-message.error {
+  background: var(--error-bg);
+  color: var(--error-text);
+}
+
+@media (max-width: 820px) {
+  .app-shell {
+    padding: 18px;
+  }
+
+  .weather-panel {
+    padding: 22px;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  .search-row button {
+    min-height: 48px;
+  }
+
+  .temperature {
+    font-size: 72px;
+  }
+
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
+}
