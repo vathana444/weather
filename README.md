@@ -43,6 +43,7 @@ Then in GitHub:
 3. Open **Actions** and run/verify the **Deploy to GitHub Pages** workflow succeeded.
 
 The workflow publishes the Vite production build from `dist`, so GitHub Pages serves bundled JS/CSS instead of `/src/main.jsx`.
+This repo also includes a `main.js` bootstrap that loads prebuilt assets on `*.github.io` to avoid a blank screen if Pages serves repository files directly.
 
 ## API
 
