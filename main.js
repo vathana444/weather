@@ -9,7 +9,7 @@ if (isGitHubPages) {
   stylesheet.href = `${basePath}assets/index.css`
   document.head.appendChild(stylesheet)
 
-  import(`${basePath}assets/index.js`).catch(() => {
+  import(`${basePath}assets/main.js`).catch(() => {
     const root = document.getElementById('root')
 
     if (!root) return

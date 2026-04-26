@@ -38,6 +38,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare Pages artifact
+        run: |
+          cp index.html dist/index.html
+          cp main.js dist/main.js
+          cp favicon.svg dist/favicon.svg
+          cp assets/* dist/assets/
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
