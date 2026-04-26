@@ -28,10 +28,24 @@ function App() {
 
   return (
     <main className="app-shell">
+      <section className="hero-copy" aria-labelledby="app-title">
+        <p className="eyebrow">Live weather</p>
+        <h1 id="app-title">Plan your day with a cleaner forecast.</h1>
+        <p className="intro">
+          Search any city and get current conditions, humidity, wind, and feels-like
+          temperature from Open-Meteo.
+        </p>
+        <div className="signal-row" aria-label="Weather highlights">
+          <span>Current</span>
+          <span>Local time</span>
+          <span>No key required</span>
+        </div>
+      </section>
+
       <section className="weather-panel">
         <div className="panel-header">
-          <p className="eyebrow">Current forecast</p>
-          <h1>Check current weather</h1>
+          <p className="panel-kicker">Current forecast</p>
+          <h2>City lookup</h2>
         </div>
 
         <SearchForm onSearch={loadWeather} isLoading={isLoading} />

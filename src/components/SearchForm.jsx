@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 export function SearchForm({ onSearch, isLoading }) {
   const [inputValue, setInputValue] = useState('')
+  const suggestedCities = ['Phnom Penh', 'Tokyo', 'London']
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -22,6 +23,21 @@ export function SearchForm({ onSearch, isLoading }) {
         <button type="submit" disabled={isLoading}>
           {isLoading ? 'Searching' : 'Search'}
         </button>
+      </div>
+      <div className="city-suggestions" aria-label="Suggested cities">
+        {suggestedCities.map((city) => (
+          <button
+            key={city}
+            type="button"
+            onClick={() => {
+              setInputValue(city)
+              onSearch(city)
+            }}
+            disabled={isLoading}
+          >
+            {city}
+          </button>
+        ))}
       </div>
     </form>
   )

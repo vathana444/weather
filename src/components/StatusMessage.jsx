@@ -1,3 +1,8 @@
 export function StatusMessage({ text, type }) {
-  return <p className={`status-message ${type}`}>{text}</p>
+  return (
+    <div className={`status-message ${type}`} role={type === 'error' ? 'alert' : 'status'}>
+      <span aria-hidden="true" />
+      <p>{text}</p>
+    </div>
+  )
 }

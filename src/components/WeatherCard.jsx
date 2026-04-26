@@ -1,11 +1,19 @@
 export function WeatherCard({ weather }) {
+  const updatedAt = new Intl.DateTimeFormat('en', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(new Date(weather.updatedAt))
+
   return (
     <article className="weather-card">
-      <div>
-        <p className="weather-location">
-          {weather.city}, {weather.country}
-        </p>
-        <p className="weather-condition">{weather.condition}</p>
+      <div className="weather-main">
+        <div>
+          <p className="weather-location">
+            {weather.city}, {weather.country}
+          </p>
+          <p className="weather-condition">{weather.condition}</p>
+        </div>
+        <span className="weather-mark" aria-hidden="true" />
       </div>
 
       <div className="temperature-row">
@@ -19,7 +27,7 @@ export function WeatherCard({ weather }) {
         <Stat label="Wind" value={`${weather.windSpeed} km/h`} />
       </div>
 
-      <p className="updated">Updated: {weather.updatedAt}</p>
+      <p className="updated">Updated {updatedAt}</p>
     </article>
   )
 }
